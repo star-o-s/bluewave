@@ -27,6 +27,21 @@ body{
     align-items: center; /* centra horizontalmente */
     justify-content: center; /* centra verticalmente si es necesario */
 }
+.wave-wrap svg {
+  height: 150px; /* más pequeño en móvil */
+}
+@media (max-width: 600px) {
+  .pp-button {
+    padding: 35px; /* botones más pequeños en móvil */
+  }
+  .file-btn {
+    padding: 20px;
+    font-size: 12px;
+  }
+  .wave-wrap svg {
+    height: 120px;
+  }
+}
 .controls{
   display:flex;
   align-items:center;
