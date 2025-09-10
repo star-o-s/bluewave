@@ -34,12 +34,13 @@ body{
   /*margin-bottom:12px;*/
 }
 .pp-button{
-    background:rgba(255,255,255,0.12);
-    padding:18px 112px;
-    border-radius:8px;
+    background:rgba(115, 115, 115,0.5);
+    padding:75px 75px;
+    border-radius:1000px;
     color:#fff;
     cursor:pointer;
-    border:1px solid rgba(255,255,255,0.08);
+    border:1px solid rgba(255, 255, 255, 1);
+	/*box-shadow: 0 1px 12px rgba(0,0,0,0.3);*/
 }
 .pp-button svg{
   width:18px;
@@ -50,15 +51,18 @@ body{
   gap:8px;
   align-items:center;
   color:#fff;
+  
 }
 .file-load input[type=file]{display:none;}
 .file-btn{
-  background:rgba(255,255,255,0.12);
-  padding:18px 112px;
-  border-radius:8px;
+  background:rgba(105,105,105,0.5);
+  padding:50px 50px 50px 50px;
+  border-radius:1000px;
   color:#fff;
+  font-size: 14px;
   cursor:pointer;
-  border:1px solid rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,1);
+  margin-top: 50px;
 }
 .wave-wrap{
   width:100%;
@@ -67,7 +71,7 @@ body{
 }
 .wave-wrap svg{
   width:100%;
-  height:500px;
+  height:200px;
 }
 .caption{
   color:#eee;
@@ -85,6 +89,22 @@ body{
 <body>
 
 <div class="player">
+  <div class="controls">
+    <div class="pp-button" id="playPause" aria-pressed="false" title="Play/Pause">
+      <svg viewBox="0 0 36 36" width="36" height="36">
+        <!-- Pause -->
+        <g id="pauseIcon" fill="white">
+          <rect x="8" y="4" width="6" height="28" rx="3"></rect>
+          <rect x="22" y="4" width="6" height="28" rx="3"></rect>
+        </g>
+        <!-- Play -->
+        <g id="playIcon" fill="white" style="display:none">
+          <path d="M12 6 L28 18 L12 30 Z"></path>
+        </g>
+      </svg>
+    </div>
+  </div>
+  
   
   <div class="wave-wrap">
     <svg id="waveSVG" role="img" aria-label="Forma de onda">
@@ -101,23 +121,13 @@ body{
 	  
     </svg>
   </div>
-  <div class="controls">
-      <label class="file-btn" for="audioFile">Upload Music</label>
-      <input type="file" id="audioFile" accept="audio/*" style="display:none">
-    <div class="pp-button" id="playPause" aria-pressed="false" title="Play/Pause">
-      <svg viewBox="0 0 36 36">
-        <g id="pauseIcon" fill="white" transform="translate(6,4)">
-          <rect x="0" y="0" width="6" height="28" rx="3"></rect>
-          <rect x="14" y="0" width="6" height="28" rx="3"></rect>
-        </g>
-        <g id="playIcon" fill="white" style="display:none">
-          <path d="M4 2 L28 18 L4 34 Z"></path>
-        </g>
-      </svg>
-    </div>
-    
-    <div id="fileName" style="font-size:13px;color:#fff;opacity:0.9;display:none">No file</div>
-  </div>
+  
+  
+    <label class="file-btn" for="audioFile">Up Song</label>
+    <input type="file" id="audioFile" accept="audio/*" style="display:none">
+  
+  
+  <div id="fileName" style="font-size:13px;color:#fff;opacity:0.9;display:none">No file</div>
 </div>
 
 <script>
