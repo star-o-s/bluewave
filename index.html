@@ -35,7 +35,7 @@ body{
 }
 .pp-button{
     background:rgba(115, 115, 115,0.5);
-    padding:75px 75px;
+    padding:42px;
     border-radius:1000px;
     color:#fff;
     cursor:pointer;
@@ -56,7 +56,7 @@ body{
 .file-load input[type=file]{display:none;}
 .file-btn{
   background:rgba(105,105,105,0.5);
-  padding:50px 50px 50px 50px;
+  padding:58px;
   border-radius:1000px;
   color:#fff;
   font-size: 14px;
@@ -123,7 +123,7 @@ body{
   </div>
   
   
-    <label class="file-btn" for="audioFile">Up Song</label>
+    <label class="file-btn" for="audioFile">Up</label>
     <input type="file" id="audioFile" accept="audio/*" style="display:none">
   
   
@@ -132,8 +132,8 @@ body{
 
 <script>
 const BAR_WIDTH = 8;
-const SPACING = 4;
-const MAX_HEIGHT = 125;
+const SPACING = 9;
+const MAX_HEIGHT = 137;
 const ACTIVE_FILL = '#09a0ff';
 const INACTIVE_FILL = 'transparent';
 const STROKE_COLOR = '#fefefe';
@@ -171,10 +171,10 @@ function createBars(data){
     const rect1 = document.createElementNS('http://www.w3.org/2000/svg','rect');
     rect1.setAttribute('x', x);
     rect1.setAttribute('y', y);
-    rect1.setAttribute('width', BAR_WIDTH);
+    rect1.setAttribute('width', 13);
     rect1.setAttribute('height', height);
-    rect1.setAttribute('rx', BAR_WIDTH/2);
-    rect1.setAttribute('ry', BAR_WIDTH/2);
+    rect1.setAttribute('rx', BAR_WIDTH/1.2);
+    rect1.setAttribute('ry', BAR_WIDTH/1.2);
     rect1.setAttribute('fill', INACTIVE_FILL);
     rect1.setAttribute('stroke', STROKE_COLOR);
     rect1.setAttribute('stroke-width', STROKE_W);
