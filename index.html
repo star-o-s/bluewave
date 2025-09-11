@@ -84,24 +84,10 @@ body{
   pointer-events:none;
   mix-blend-mode:screen;
 }
-/* Cursor fijo en el centro, solo en móvil */
 @media (max-width: 768px) {
-  .wave-wrap {
-    overflow: hidden; /* ocultar lo que sobra */
-    position: relative;
-  }
   #waveSVG {
-    transition: transform 0.05s linear;
-  }
-  .cursor {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: var(--blue);
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
+    transform-origin: left center; /* que se escale desde la izquierda */
+    transform: scaleX(2); /* zoom x2 en horizontal */
   }
 }
 </style>
@@ -140,7 +126,6 @@ body{
       <g id="barsActive" transform="translate(24,0)" clip-path="url(#progressClip)" filter="url(#barShadow)"></g>
 	  
     </svg>
-	<div class="cursor"></div>
   </div>
   
   
@@ -212,18 +197,8 @@ function createBars(data){
 
 // Pintar progreso fluido
 function drawProgress(){
-  if (!audio.duration) return;
-  const progress = audio.currentTime / audio.duration;
-
-  if (window.innerWidth <= 768) {
-    // 🎵 Modo móvil estilo SoundCloud
-    const offset = progress * totalWidth - (waveSVG.clientWidth / 2);
-    waveSVG.style.transform = `translateX(-${offset}px)`;
-  } else {
-    // 🖥️ Modo escritorio (tu barra azul actual)
-    progressRect.setAttribute('width', progress * totalWidth);
-  }
-
+  const progress = audio.currentTime / audio.duration || 0;
+  progressRect.setAttribute('width', progress * totalWidth);
   if(!audio.paused) animationId = requestAnimationFrame(drawProgress);
 }
 
