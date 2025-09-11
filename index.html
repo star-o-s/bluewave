@@ -99,6 +99,37 @@ body{
   pointer-events:none;
   mix-blend-mode:screen;
 }
+
+/* Ajustes generales para pantallas pequeñas */
+@media (max-width: 600px) {
+  .player {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .pp-button {
+    padding: 80px;   /* botón más grande */
+  }
+
+  .pp-button svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .wave-wrap svg {
+    height: 250px;   /* waveform más alto */
+  }
+
+  .file-btn {
+    padding: 25px;
+    font-size: 16px;
+  }
+
+  .caption {
+    font-size: 16px;
+  }
+}
 </style>
 </head>
 <body>
