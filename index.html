@@ -28,7 +28,7 @@ body{
     justify-content: center; /* centra verticalmente si es necesario */
 }
 .wave-wrap svg {
-  height: 150px; /* más pequeño en móvil */
+  height: 700px; /* más pequeño en móvil */
 }
 @media (max-width: 600px) {
   .pp-button {
@@ -98,66 +98,6 @@ body{
   fill: var(--blue);
   pointer-events:none;
   mix-blend-mode:screen;
-}
-
-/* Estilos especiales para pantallas pequeñas */
-@media (max-width: 768px) {
-  body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: var(--bg);
-  }
-
-  .player {
-    width: 100%;
-    height: 100vh;            /* ocupa toda la pantalla */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;  /* centra vertical */
-    align-items: center;      /* centra horizontal */
-    padding: 20px;
-    box-sizing: border-box;
-  }
-
-  .controls {
-    margin-bottom: 30px;
-  }
-
-  .pp-button {
-    padding: 90px;   /* botón enorme en móvil */
-  }
-
-  .pp-button svg {
-    width: 40px;
-    height: 40px;
-  }
-
-  .wave-wrap {
-    flex: 1;                /* ocupa gran parte de la pantalla */
-    width: 500%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .wave-wrap svg {
-    height: 800px;          /* waveform más alto */
-  }
-
-  .file-btn {
-    padding: 25px 40px;
-    font-size: 18px;
-    margin-top: 20px;
-  }
-
-  #fileName {
-    font-size: 16px;
-    margin-top: 10px;
-  }
 }
 </style>
 </head>
