@@ -27,19 +27,6 @@ body{
     align-items: center; /* centra horizontalmente */
     justify-content: center; /* centra verticalmente si es necesario */
 }
-
-@media (max-width: 600px) {
-  .pp-button {
-    padding: 35px; /* botones más pequeños en móvil */
-  }
-  .file-btn {
-    padding: 20px;
-    font-size: 12px;
-  }
-  .wave-wrap svg {
-    height: 1020px;
-  }
-}
 .controls{
   display:flex;
   align-items:center;
@@ -111,7 +98,7 @@ body{
           <rect x="22" y="4" width="6" height="28" rx="3"></rect>
         </g>
         <!-- Play -->
-        <g id="playIcon" fill="white" style="display:none">
+        <g id="playIcon" fill="white" style="display:none" stroke-linejoin="round" stroke="white" stroke-width="5">
           <path d="M12 6 L28 18 L12 30 Z"></path>
         </g>
       </svg>
