@@ -20,7 +20,7 @@ body{
   font-family:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 .player{
-  width:90%;
+  width:100%;
   max-width:1200px;
   display: flex;
     flex-direction: column;
@@ -34,12 +34,12 @@ body{
   /*margin-bottom:12px;*/
 }
 .pp-button{
-    background:rgba(115, 115, 115,0.5);
+    background:rgba(115, 115, 115,0.4);
     padding:50px;
     border-radius:1000px;
     color:#fff;
     cursor:pointer;
-    border:1px solid rgba(255, 255, 255, 1);
+    border:1px solid rgba(255, 235, 103, 1);
 	/*box-shadow: 0 1px 12px rgba(0,0,0,0.3);*/
 }
 .pp-button svg{
@@ -55,14 +55,13 @@ body{
 }
 .file-load input[type=file]{display:none;}
 .file-btn{
-  background:rgba(105,105,105,0.5);
+  background:rgba(105,105,105,0.4);
   padding:50px;
   border-radius:1000px;
   color:#fff;
   font-size: 14px;
   cursor:pointer;
-  border:1px solid rgba(255,255,255,1);
-  margin-top: 50px;
+  border:1px solid rgba(180,103,255,1);
 }
 .wave-wrap{
   width:100%;
@@ -71,7 +70,7 @@ body{
 }
 .wave-wrap svg{
   width:100%;
-  height:200px;
+  height:300px;
 }
 .caption{
   color:#eee;
@@ -94,7 +93,7 @@ body{
       <svg viewBox="0 0 36 36" width="36" height="36">
         <!-- Pause -->
         <g id="pauseIcon" fill="white">
-          <<rect x="8" y="4" width="6" height="28" rx="3"></rect>
+          <rect x="8" y="4" width="6" height="28" rx="3"></rect>
           <rect x="22" y="4" width="6" height="28" rx="3"></rect>>
         </g>
         <!-- Play -->
@@ -171,7 +170,7 @@ function createBars(data){
     const rect1 = document.createElementNS('http://www.w3.org/2000/svg','rect');
     rect1.setAttribute('x', x);
     rect1.setAttribute('y', y);
-    rect1.setAttribute('width', 13);
+    rect1.setAttribute('width', 12);
     rect1.setAttribute('height', height);
     rect1.setAttribute('rx', BAR_WIDTH/1.2);
     rect1.setAttribute('ry', BAR_WIDTH/1.2);
@@ -250,6 +249,7 @@ waveSVG.addEventListener('click', e=>{
   audio.currentTime = pct * audio.duration;
   drawProgress();
 });
+
 </script>
 
 </body>
